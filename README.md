@@ -24,6 +24,8 @@ Tiny-Loader加载器 可以用在静态资源的按需加载上。在页面中�
 
 Tiny-Loader加载器 也可以用在静态资源的预加载上。通过判断用户的访问趋势，在当前页面打开完成后，用Tiny-Loader下载热点静态资源文件，或者接下来页面的静态资源文件。加快后续页面的打开速度。
 
+[示例](https://raw.githubusercontent.com/youzan/tiny-loader.js/master/example.html)
+
 疑问或问题
 --------------------------------------
 有任何疑问或者问题，可以在[issue](https://github.com/youzan/tiny-loader.js/issues)中向我们提出来，我们会第一时间解决。

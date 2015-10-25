@@ -111,6 +111,11 @@
 
         list = Array.prototype.slice.call(list || []);
 
+        if( list.length === 0 ){
+            cb();
+            return;
+        }
+
         for( var i = 0, len = list.length; i < len; i++ ){
             loadItem(list[i], list, setting, cb);
         }
