@@ -20,7 +20,7 @@
 
 (function(window, document){
     // cssExpr 用于判断资源是否是css
-    var cssExpr = new RegExp('\\.css');
+    var cssExpr = new RegExp('\\.css[\.|$]?');
     var nHead = document.head || document.getElementsByTagName('head')[0];
 
     // 判断对应的node节点是否已经载入完成
