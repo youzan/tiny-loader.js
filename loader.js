@@ -5,13 +5,13 @@
 * **DEMO & API**
 *
 * // 脚本异步下载执行
-*  `window.loader.async(['xxxx.js', 'yyyy.js'])`
+*  `window.Loader.async(['xxxx.js', 'yyyy.js'])`
 *
 * // 脚本同时下载，顺序执行
-*  `window.loader.sync(['xxxx.js', 'yyyy.js'])`
+*  `window.Loader.sync(['xxxx.js', 'yyyy.js'])`
 *
 * ```
-*   window.loader.async(['xxxx.js'], function(){
+*   window.Loader.async(['xxxx.js'], function(){
 *        // 回调函数
 *    });
 * ```
