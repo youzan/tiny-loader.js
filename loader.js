@@ -56,10 +56,10 @@
     }
 
     // 在老的webkit中，因不支持load事件，这里用轮询sheet来保证
-    function pollCss(node, callback){
+    function pollCss(node, callback) {
         var isLoaded;
 
-        if( node.sheet ){
+        if (node.sheet) {
             isLoaded = true;
         }
 
