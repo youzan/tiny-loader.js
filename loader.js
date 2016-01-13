@@ -1,20 +1,9 @@
-/*
- * #####Loader代码加载器
- * 用于脚本，样式的延迟加载、样式的预加载等
- * 脚本的延迟加载onLoad之后
- * **DEMO & API**
+/**
+ * @preserve Tiny-Loader: A small loader that load CSS/JS in best way for page performanceIs.
  *
- * // 脚本异步下载执行
- *  `window.Loader.async(['xxxx.js', 'yyyy.js'])`
- *
- * // 脚本同时下载，顺序执行
- *  `window.Loader.sync(['xxxx.js', 'yyyy.js'])`
- *
- * ```
- *   window.Loader.async(['xxxx.js'], function(){
- *        // 回调函数
- *    });
- * ```
+ * @version 1.0.1
+ * @copyright The Youzan Limited [All Rights Reserved]
+ * @license MIT License (see LICENSE.txt)
  */
 (function(window, document) {
     'use strict';
