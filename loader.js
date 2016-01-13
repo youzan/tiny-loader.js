@@ -16,9 +16,8 @@
  *    });
  * ```
  */
-'use strict';
-
 (function(window, document) {
+    'use strict';
     // cssExpr 用于判断资源是否是css
     var cssExpr = new RegExp('\\.css');
     var nHead = document.head || document.getElementsByTagName('head')[0];
