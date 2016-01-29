@@ -158,7 +158,22 @@
         if (isReady(node)) {
             callback();
         } else {
-            window.addEventListener('load', callback);
+            // 1500ms 以后，直接开始下载资源文件，不再等待load事件
+            var timeLeft = 1500;
+            var isExecute = false;
+            window.addEventListener('load', function() {
+                if (!isExecute) {
+                    callback();
+                    isExecute = true;
+                }
+            });
+
+            setTimeout(function() {
+                if (!isExecute) {
+                    callback();
+                    isExecute = true;
+                }
+            }, timeLeft);
         }
     }
 
