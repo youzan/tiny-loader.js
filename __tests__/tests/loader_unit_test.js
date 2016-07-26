@@ -1,43 +1,17 @@
 define(['__tests__/vendor/assert','loader'], function(assert,Loader) {
 
-    window._cdnFallback = function(a) {
-        var t, o = {
-            script: "src",
-            link: "href"
-        }, r = "b.yzcdn.cn", n = "su.yzcdn.cn";
-        var c, i, l, d, f, m, u, s;
-        if (c = a.nodeName.toLowerCase(),i = o[c]) {
-            l = d = a[i],
-            l = l.replace(r, n),
-            f = l == d,
-            f || (m = document,
-            u = m.head || m.getElementsByTagName("head")[0] || m.documentElement,
-            s = m.createElement(c),
-            "link" == c && (s.rel = "stylesheet"),
-            s[i] = l,
-            s.onerror = function() {
-                _cdnFallback(s)
-            }
-            ,
-            u.appendChild(s)),
-            (new Image).src = "//tj.koudaitong.com/1.gif?net_error=1&fileurl=" + d;
-            var g = l.indexOf(n) > -1 || l.indexOf(r) > -1
-              , y = !t && f;
-            y && g && (e.motify && e.motify.error && e.motify.error("啊哦，有东西加载失败了，刷新下试试~"),
-            t = !0)
-        }
+    window._cdnFallback = function() { 
     }
-
 
     var args = [
         [],
-        ['http://cdn.bootcss.com/angular.js/2.0.0-beta.17/angular2-all-testing.umd.dev.js',
-        'http://cdn.bootcss.com/jquery/3.0.0-rc1/jquery.js',
-        'http://cdn.bootcss.com/jquery/2.1.2/jquery.js'
+        ['https://b.yzcdn.cn/v2/vendor/jquery-1.10.2.min.js',
+        'https://b.yzcdn.cn/v2/vendor/require.js',
+        'https://dn-growing.qbox.me/vds.js'
         ],
-        ['https://raw.githubusercontent.com/necolas/normalize.css/master/normalize.css','http://cdn.bootcss.com/jquery/2.1.2/jquery.js']    
+        ['https://b.yzcdn.cn/v2/build_css/stylesheets/intro/projects/new_intro_a01915dc00.css','https://b.yzcdn.cn/v2/vendor/jquery-1.10.2.min.js']    
     ]
-    var errArg = ['https://raw.githubusercontent.com/necolas/normalize.css/master/normaliz.css']
+    var errArg = ['https://b.yzcdn.cn/v2/vendor/jquer-1.10.2.min.js']
     var loader = Loader;
     describe('withoutError', function() {
        afterEach(function () {
@@ -65,7 +39,6 @@ define(['__tests__/vendor/assert','loader'], function(assert,Loader) {
 
     describe('Error', function() {
         it('will throw an Error', function(done) {
-            // assert.throws('Error');
             window._cdnFallback = function(node) {
                 assert.strictEqual(node.href, errArg[0]);
                 done();

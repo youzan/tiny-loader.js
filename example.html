@@ -17,9 +17,9 @@
 			var nBtn = document.getElementsByClassName('js-click')[0];
 			nBtn.addEventListener('click', function(e){
 				window.Loader.async([
-					'https://raw.githubusercontent.com/necolas/normalize.css/master/normalize.css',
-					'__tests__/vendor/backbone.js',
-					'__tests__/vendor/underscore.js'
+					'https://b.yzcdn.cn/v2/vendor/jquery-1.10.2.min.js',
+        			'https://b.yzcdn.cn/v2/vendor/require.js',
+        			'https://dn-growing.qbox.me/vds.js'
 				], function(){
 					alert('download finish');
 				});
@@ -29,9 +29,8 @@
 			// 假设5s后页面已经全部加载完
 			setTimeout(function(){
 				window.Loader.async([
-        			'http://cdn.bootcss.com/jquery/3.0.0-rc1/jquery.js',
-        			'http://cdn.bootcss.com/jquery/2.1.2/jquery.js',
-					'https://raw.githubusercontent.com/necolas/normalize.css/master/normalize.css'
+        			'https://b.yzcdn.cn/v2/build_css/stylesheets/intro/projects/new_intro_a01915dc00.css',
+        			'https://b.yzcdn.cn/v2/vendor/jquery-1.10.2.min.js'
 				]);
 			}, 5000);
 		</script>
