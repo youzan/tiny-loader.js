@@ -1,13 +1,15 @@
 <html>
-	<head></head>
+	<head>
+		<meta charset="UTF-8">
+	</head>
 	<body>
 		<button class="js-click">点我</button>
 		<script type="text/javascript" src="./loader.js"></script>
 		<script type="text/javascript">
 			// 页面初始化需要加载的静态资源 
 			var initLoadFiles = [
-				// 'a.js',
-				// 'b.js'
+				'__tests__/vendor/assert.js',
+				'__tests__/vendor/jquery.js'
 			];
 			window.Loader.sync(initLoadFiles);
 
@@ -15,9 +17,9 @@
 			var nBtn = document.getElementsByClassName('js-click')[0];
 			nBtn.addEventListener('click', function(e){
 				window.Loader.async([
-					// 'a.css',
-					// 'b.js',
-					// 'c.js'
+					'https://raw.githubusercontent.com/necolas/normalize.css/master/normalize.css',
+					'__tests__/vendor/backbone.js',
+					'__tests__/vendor/underscore.js'
 				], function(){
 					alert('download finish');
 				});
@@ -27,9 +29,9 @@
 			// 假设5s后页面已经全部加载完
 			setTimeout(function(){
 				window.Loader.async([
-					// 'a.js',
-					// 'b.js',
-					// 'c.css'
+        			'http://cdn.bootcss.com/jquery/3.0.0-rc1/jquery.js',
+        			'http://cdn.bootcss.com/jquery/2.1.2/jquery.js',
+					'https://raw.githubusercontent.com/necolas/normalize.css/master/normalize.css'
 				]);
 			}, 5000);
 		</script>
