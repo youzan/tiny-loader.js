@@ -5,11 +5,15 @@ define(['__tests__/vendor/assert','loader'], function(assert,Loader) {
 
     var args = [
         [],
-        ['https://b.yzcdn.cn/v2/vendor/jquery-1.10.2.min.js',
+        [
+        'https://b.yzcdn.cn/v2/vendor/jquery-1.10.2.min.js',
         'https://b.yzcdn.cn/v2/vendor/require.js',
         'https://dn-growing.qbox.me/vds.js'
         ],
-        ['https://b.yzcdn.cn/v2/build_css/stylesheets/intro/projects/new_intro_a01915dc00.css','https://b.yzcdn.cn/v2/vendor/jquery-1.10.2.min.js']    
+        [
+        'https://b.yzcdn.cn/v2/build_css/stylesheets/intro/projects/new_intro_a01915dc00.css',
+        'https://b.yzcdn.cn/v2/vendor/jquery-1.10.2.min.js'
+        ]    
     ]
     var errArg = ['https://b.yzcdn.cn/v2/vendor/jquer-1.10.2.min.js']
     var loader = Loader;
@@ -40,7 +44,7 @@ define(['__tests__/vendor/assert','loader'], function(assert,Loader) {
     describe('Error', function() {
         it('will throw an Error', function(done) {
             window._cdnFallback = function(node) {
-                assert.strictEqual(node.href, errArg[0]);
+                assert.strictEqual(node.src, errArg[0]);
                 done();
             }
             loader.sync(errArg);

@@ -20,13 +20,11 @@
 
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
-    define([], factory); // AMD
-  } else if (typeof exports === 'object') {
-    module.exports = factory; // CommonJS
+    define([], factory(root, root.document)); // AMD
   } else {
-    root.Loader = factory; // Global
+    root.Loader = factory(root, root.document); // Global
   }
-})(this, (function(window, document) {
+})(this, function(window, document) {
     // cssExpr 用于判断资源是否是css
     var cssExpr = new RegExp('\\.css');
     var nHead = document.head || document.getElementsByTagName('head')[0];
@@ -210,5 +208,5 @@
     window.Loader = Loader;
 
     return Loader;
-})(window, document))
+})
 
