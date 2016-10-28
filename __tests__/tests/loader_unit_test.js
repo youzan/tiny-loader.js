@@ -1,4 +1,6 @@
-define(['__tests__/vendor/assert','loader'], function(assert,Loader) {
+define(['__tests__/vendor/assert', 'loader'], function(assert, Loader) {
+
+    console.log(Loader);
 
     window._cdnFallback = function() { 
     }

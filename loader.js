@@ -20,7 +20,7 @@
 
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
-    define([], factory(root, root.document)); // AMD
+    define('tiny-loader', [], factory(root, root.document)); // AMD
   } else {
     root.Loader = factory(root, root.document); // Global
   }
