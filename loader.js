@@ -102,6 +102,14 @@
 
     // 资源下载入口，根绝文件类型的不同，调用loadCss或者loadJs
     function loadItem(url, list, setting, callback) {
+        // 如果加载的url为空，就直接成功返回
+        if (!url) {
+            setTimeout(function() {
+                onFinishLoading();
+            });
+            return;
+        }
+
         if (cssExpr.test(url)) {
             loadCss(url, setting, onFinishLoading);
         } else {

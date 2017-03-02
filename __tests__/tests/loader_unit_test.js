@@ -5,6 +5,10 @@ define(['__tests__/vendor/assert', 'loader'], function(assert) {
     var args = [
         [],
         [
+            ''
+        ],
+        [
+            '',
             'https://b.yzcdn.cn/v2/vendor/jquery-1.10.2.min.js',
             'https://b.yzcdn.cn/v2/vendor/require.js',
             'https://dn-growing.qbox.me/vds.js'
