@@ -102,6 +102,14 @@
 
     // 资源下载入口，根绝文件类型的不同，调用loadCss或者loadJs
     function loadItem(url, list, setting, callback) {
+        // 如果加载的url为空，就直接成功返回
+        if (!url) {
+            setTimeout(function() {
+                onFinishLoading();
+            });
+            return;
+        }
+
         if (cssExpr.test(url)) {
             loadCss(url, setting, onFinishLoading);
         } else {
@@ -146,7 +154,22 @@
         if (isReady(node)) {
             callback();
         } else {
-            window.addEventListener('load', callback);
+            // 1500ms 以后，直接开始下载资源文件，不再等待load事件
+            var timeLeft = 1500;
+            var isExecute = false;
+            window.addEventListener('load', function() {
+                if (!isExecute) {
+                    callback();
+                    isExecute = true;
+                }
+            });
+
+            setTimeout(function() {
+                if (!isExecute) {
+                    callback();
+                    isExecute = true;
+                }
+            }, timeLeft);
         }
     }
 
@@ -175,5 +198,4 @@
     window.Loader = Loader;
 
     return Loader;
-
 })(window, document);
