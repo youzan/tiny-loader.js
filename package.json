@@ -1,0 +1,27 @@
+{
+  "name": "loader",
+  "version": "1.0.0",
+  "description": "Tiny-Loader.js ========================= A small loader that load CSS/JS in best way for page performance",
+  "main": "loader.js",
+  "scripts": {
+    "test": "karma start; npm run coverage",
+    "coverage": "find coverage -name 'index.html' | sed -n 1,1p  | xargs -I {} open {}  "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.qima-inc.com:bower/Loader.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "karma": "^1.1.1",
+    "karma-chrome-launcher": "^1.0.1",
+    "karma-coverage": "^1.1.1",
+    "karma-mocha": "^1.1.1",
+    "karma-requirejs": "^1.0.0",
+    "karma-sinon": "^1.0.5",
+    "mocha": "^2.5.3",
+    "requirejs": "^2.2.0",
+    "sinon": "^1.17.4"
+  }
+}
