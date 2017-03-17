@@ -8,7 +8,7 @@
 (function(window, document) {
     'use strict';
     // cssExpr 用于判断资源是否是css
-    var cssExpr = new RegExp('\\.css');
+    var cssExpr = new RegExp('\\.css[\.|$]?');
     var nHead = document.head || document.getElementsByTagName('head')[0];
     // `onload` 在WebKit < 535.23， Firefox < 9.0 不被支持
     var isOldWebKit = +navigator.userAgent
